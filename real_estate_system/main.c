@@ -80,10 +80,10 @@ int main(){
     hash_table_init();
     print_table();
 
-    house first = {.title = "First", .for_who = "FAMILY", .face = "EAST", .room_count = 3, .bath_count = 2, .balcony_count = 2, .price = 60050,50};
-    house second = {.title = "Second", .for_who = "SINGLE", .face = "WEST", .room_count = 1, .bath_count = 1, .balcony_count = 1, .price = 25050,50};
-    house third = {.title = "Third", .for_who = "BOTH", .face = "SOUTH", .room_count = 2, .bath_count = 1, .balcony_count = 1, .price = 45050,00};
-    house fourth = {.title = "Fourth", .for_who = "FAMILY", .face = "SOUTH", .room_count = 4, .bath_count = 2, .balcony_count = 1, .price = 55050,00};
+    house first = {.title = "First", .for_who = "FAMILY", .face = "EAST", .room_count = 3, .bath_count = 2, .balcony_count = 2, .price = 60050.50};
+    house second = {.title = "Second", .for_who = "SINGLE", .face = "WEST", .room_count = 1, .bath_count = 1, .balcony_count = 1, .price = 25050.50};
+    house third = {.title = "Third", .for_who = "BOTH", .face = "SOUTH", .room_count = 2, .bath_count = 1, .balcony_count = 1, .price = 45050.00};
+    house fourth = {.title = "Fourth", .for_who = "FAMILY", .face = "SOUTH", .room_count = 4, .bath_count = 2, .balcony_count = 1, .price = 55050.00};
     hash_table_insert(&first);
     hash_table_insert(&second);
     hash_table_insert(&third);
