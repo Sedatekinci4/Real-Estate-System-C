@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 #define TABLE_LENGTH 25 // how many element does this table has
 #define MAX_STR 128 // max string length
@@ -38,7 +39,7 @@ bool hash_table_init(){
 
 // Print function for out program, prints the house table
 void print_table(){
-    printf("\n       START ---------- FOR WHO ------ ROOM COUNT \n\n");
+    printf("\n       START ---------- FOR WHO ------ FACE ------ ROOM COUNT --------- PRICE -- \n\n");
     for(int i = 0; i < TABLE_LENGTH; i++)
     {
         if(hash_table[i] == NULL)
@@ -51,13 +52,13 @@ void print_table(){
         }
         else
         {
-            printf("\t%i\t%s\t%s\t\t%d\n",i, hash_table[i]->title, hash_table[i]->for_who, hash_table[i]->room_count);
+            printf("\t%i\t%s\t%s\t\t%s\t\t%d\t\t%.2f\n",i, hash_table[i]->title, hash_table[i]->for_who, hash_table[i]->face, hash_table[i]->room_count, hash_table[i]->price);
         }
     }
     printf("-------END-------\n\n");
 }
 
-hash_table_insert(house *p){
+bool hash_table_insert(house *p){
     if(p == NULL) return false;
     int index = hash(p->title);
     for(int i = 0; i < TABLE_LENGTH; i++)
