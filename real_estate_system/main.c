@@ -52,7 +52,7 @@ void print_table(){
         }
         else
         {
-            printf("\t%i\t%s\t%s\t\t%s\t\t%d\t\t%.2f\n",i, hash_table[i]->title, hash_table[i]->for_who, hash_table[i]->face, hash_table[i]->room_count, hash_table[i]->price);
+            printf("\t%i\t%s\t%s\t%s\t%d\t%.2f\n",i, hash_table[i]->title, hash_table[i]->for_who, hash_table[i]->face, hash_table[i]->room_count, hash_table[i]->price);
         }
     }
     printf("-------END-------\n\n");
@@ -74,12 +74,34 @@ bool hash_table_insert(house *p){
     return false;
 }
 
+int main_menu(){
+    int choice;
+    printf("-------------- WELCOME TO THE REAL ESTATE SYSTEM --------------\n");
+    printf("Please select the operation you want to make...\n\n");
+    printf("1- Show available houses\n");
+    printf("0- Exit\n");
+    printf("Your choice:\t");
+    scanf("%d", &choice);
+    switch (choice)
+    {
+    case 1:
+        print_table();
+        break;
+    case 0:
+        printf("Have a good day...\n");
+        return 1;
+    default:
+        printf("Please enter one choice from available options!!!!\n");
+        break;
+    }
+
+}
+
 // main function that we will use
 int main(){
     int num = 0;
+    int choice = 1;
     hash_table_init();
-    print_table();
-
     house first = {.title = "First", .for_who = "FAMILY", .face = "EAST", .room_count = 3, .bath_count = 2, .balcony_count = 2, .price = 60050.50};
     house second = {.title = "Second", .for_who = "SINGLE", .face = "WEST", .room_count = 1, .bath_count = 1, .balcony_count = 1, .price = 25050.50};
     house third = {.title = "Third", .for_who = "BOTH", .face = "SOUTH", .room_count = 2, .bath_count = 1, .balcony_count = 1, .price = 45050.00};
@@ -89,5 +111,9 @@ int main(){
     hash_table_insert(&third);
     hash_table_insert(&fourth);
     print_table();
+    /*while(choice != 0){
+        choice = main_menu();
+    }*/
+    
     return 0;
 }
